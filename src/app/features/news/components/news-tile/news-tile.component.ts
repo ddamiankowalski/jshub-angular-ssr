@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
+import { NgIconComponent } from "@ng-icons/core";
 
 @Component({
     standalone: true,
@@ -8,7 +9,8 @@ import { ClassBinder } from "../../../../utils/services/class-binder.service";
     styleUrl: 'news-tile.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ClassBinder]
+    providers: [ClassBinder],
+    imports: [NgIconComponent]
 })
 export class NewsTileComponent {
     private _classBinder = inject(ClassBinder);
