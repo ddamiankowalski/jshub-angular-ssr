@@ -1,10 +1,13 @@
 .jshub-header-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333333;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333333;
+        cursor: pointer;
+    }
 
     &__logo {
         display: block;

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
-import { ClassBinder } from 'src/app/utils/services/class-binder.service';
+import { ClassBinder } from '../../../../utils/services/class-binder.service';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -12,8 +13,13 @@ import { ClassBinder } from 'src/app/utils/services/class-binder.service';
 })
 export class HeaderLogoComponent {
   private _classBinder = inject(ClassBinder);
+  private _router = inject(Router);
 
   constructor() {
     this._classBinder.bind('jshub-header-logo');
+  }
+
+  public onClick(): void {
+    this._router.navigate(['/'])
   }
 }
