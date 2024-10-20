@@ -1,24 +1,22 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from "./features/header/components/header-component/header.component";
+import { ClassBinder } from './utils/services/class-binder.service';
 
 @Component({
   standalone: true,
   imports: [RouterModule, HeaderComponent],
   selector: 'jshub-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: 'app.component.html',
+  styleUrl: 'app.component.scss',
+  providers: [ClassBinder]
 })
 export class AppComponent {
-  title = 'javascripthub';
-  public test = signal('');
+  public title = 'jshub.dev';
 
-  private _http = inject(HttpClient);
+  private _classBinder = inject(ClassBinder)
 
   constructor() {
-    this._http.get('https://pokeapi.co/api/v2/pokemon').subscribe(x => {
-      this.test.set(x.toString())
-    })
+    this._classBinder.bind('jshub-root');
   }
 }
