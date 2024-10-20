@@ -3,17 +3,17 @@ import { ClassBinder } from "src/app/utils/services/class-binder.service";
 
 @Component({
     standalone: true,
-    selector: 'jshub-header-auth',
-    templateUrl: 'header-auth.component.html',
-    styleUrl: 'header-auth.component.scss',
+    selector: 'jshub-news-container',
+    templateUrl: 'news-container.component.html',
+    styleUrl: 'news-container.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ClassBinder]
 })
-export class HeaderAuthComponent {
+export class NewsContainerComponent {
     private _classBinder = inject(ClassBinder);
 
     constructor() {
-        this._classBinder.bind('jshub-header-auth');
+        this._classBinder.bind('jshub-news-container');
     }
 }
