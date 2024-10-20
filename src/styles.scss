@@ -12,7 +12,9 @@ html, body {
 
 .jshub-root {
     display: flex;
-    margin: 3.75rem auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: auto;
     width: 80%;
-    justify-content: center;
+    height: 100%;
 }
