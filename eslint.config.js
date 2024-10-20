@@ -29,7 +29,7 @@ module.exports = [
         'error',
         {
           type: 'element',
-          prefix: 'app',
+          prefix: 'jshub',
           style: 'kebab-case',
         },
       ],
