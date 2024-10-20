@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@
 import { ClassBinder } from "src/app/utils/services/class-binder.service";
 import { HeaderMenuComponent } from "../header-menu/header-menu.component";
 import { HeaderLogoComponent } from "../header-logo/header-logo.component";
+import { HeaderAuthComponent } from "../header-auth/header-auth.component";
 
 @Component({
     standalone: true,
@@ -11,7 +12,7 @@ import { HeaderLogoComponent } from "../header-logo/header-logo.component";
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     providers: [ClassBinder],
-    imports: [HeaderLogoComponent ,HeaderMenuComponent]
+    imports: [HeaderLogoComponent, HeaderMenuComponent, HeaderAuthComponent]
 })
 export class HeaderComponent {
     private _classBinder = inject(ClassBinder);
