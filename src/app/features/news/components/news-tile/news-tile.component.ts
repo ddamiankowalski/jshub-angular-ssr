@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
-import { ClassBinder } from "src/app/utils/services/class-binder.service";
+import { ClassBinder } from "../../../../utils/services/class-binder.service";
 
 @Component({
     standalone: true,
