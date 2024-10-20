@@ -1,0 +1,19 @@
+.jshub-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333333;
+
+    &__logo {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        background: url("public/images/logo.png");
+    }
+
+    &__domain {
+        font-weight: 400;
+    }
+}

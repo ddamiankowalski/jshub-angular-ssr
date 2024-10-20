@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "src/app/utils/services/class-binder.service";
 import { HeaderMenuComponent } from "../header-menu/header-menu.component";
+import { HeaderLogoComponent } from "../header-logo/header-logo.component";
 
 @Component({
     standalone: true,
@@ -10,7 +11,7 @@ import { HeaderMenuComponent } from "../header-menu/header-menu.component";
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     providers: [ClassBinder],
-    imports: [HeaderMenuComponent]
+    imports: [HeaderLogoComponent ,HeaderMenuComponent]
 })
 export class HeaderComponent {
     private _classBinder = inject(ClassBinder);
