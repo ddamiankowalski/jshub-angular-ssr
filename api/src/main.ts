@@ -1,21 +1,21 @@
 import express from 'express';
 import * as path from 'path';
-import mongoose from 'mongoose';
 import { Article } from './db/models/article';
+import { connectDatabase } from './db/database';
+import dotenv from 'dotenv';
 
-mongoose.connect('mongodb://localhost:27017/jshub')
-  .then(() => {
-    console.log('Successfully connected to the database');
+dotenv.config();
 
-    const port = process.env['PORT'] || 3000;
-    const server = app.listen(port, () => {
-      console.log(`Listening at http://localhost:${port}/api`);
-    });
+const run = async (): Promise<void> => {
+  await connectDatabase();
 
-    server.on('error', console.error);
-  })
-  .catch(err => console.log(err))
+  const port = process.env['PORT'] || 3000;
+  const server = app.listen(port, () => {
+    console.log(`Listening at http://localhost:${port}/api`);
+  });
 
+  server.on('error', console.error);
+}
 
 const app = express();
 
@@ -34,4 +34,11 @@ app.get('/article', async (req, res) => {
   const result = await article.save();
   res.send(result);
 })
+
+app.get('/all', async (req, res) => {
+  const results = await Article.find();
+  res.send(results)
+})
+
+run();
 
