@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, computed, inject, viewChildren, ViewEncapsulation } from "@angular/core";
 import { NewsTileComponent } from "../news-tile/news-tile.component";
 import { ClassBinder } from '../../../../utils/services/class-binder.service';
 import { JsonPipe } from "@angular/common";
@@ -22,11 +22,23 @@ export class NewsComponent {
     private _classBinder = inject(ClassBinder);
     private _router = inject(Router);
 
+    private _tiles = viewChildren(NewsTileComponent);
+
     constructor() {
         this._classBinder.bind('jshub-news');
     }
 
     public onNewsClick(id: string): void {
-        this._router.navigate(['/', 'article', id])
+        const tiles = this._tiles();
+
+        Promise.all(tiles.map((tile, index) => {
+            if(tile.news()._id === id) {
+                return tile.fade(index * 50 + 100)
+            }
+             
+            return tile.fade(index * 50)
+        })).then(() => {
+            this._router.navigate(['/', 'article', id])
+        })
     }
 }

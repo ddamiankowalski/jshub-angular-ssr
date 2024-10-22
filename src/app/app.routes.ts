@@ -13,7 +13,7 @@ export const appRoutes: Route[] = [
     {
         path: 'article/:id',
         component: ArticleComponent,
-        resolve: { articleInfo: articleResolver }
+        resolve: { article: articleResolver }
     },
     {
         path: '**',

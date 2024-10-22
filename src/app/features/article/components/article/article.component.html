@@ -1,3 +1,7 @@
-<div class="jshub-article__header">
-    <h1>How closures change the world... Or at least your code</h1>
-</div>
+@if(article(); as article) {
+    <div class="jshub-article__header">
+        <h1>{{ article.title }}</h1>
+    </div>
+    
+    <jshub-article-info />
+}

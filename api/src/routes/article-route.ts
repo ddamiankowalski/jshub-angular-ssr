@@ -28,4 +28,17 @@ router.get('/all', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const article = await Article.findById(id);
+        
+        res.status(200);
+        res.send(article);
+    } catch (err) {
+        res.send(err);
+    }
+})
+
 export { router as articleRouter };

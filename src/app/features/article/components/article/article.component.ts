@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
 import { injectRouteData } from "ngxtension/inject-route-data";
+import { ArticleInfoComponent } from "../article-info/article-info.component";
 
 @Component({
     standalone: true,
@@ -8,11 +9,13 @@ import { injectRouteData } from "ngxtension/inject-route-data";
     templateUrl: 'article.component.html',
     styleUrl: 'article.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    imports: [ArticleInfoComponent],
+    providers: [ClassBinder]
 })
 export class ArticleComponent {
     public routeData = injectRouteData();
-    public articleInfo = computed(() => this.routeData()['articleInfo'])
+    public article = computed(() => this.routeData()['article'])
 
     private _classBinder = inject(ClassBinder);
 

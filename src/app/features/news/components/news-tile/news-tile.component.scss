@@ -5,13 +5,15 @@
     border-radius: 0.75rem;
     background-color: red;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    transition: box-shadow .3s ease;
+    transition: box-shadow .3s ease, opacity .3s ease;
     background: linear-gradient(to bottom, var(--light), var(--dark)), url("https://www.nationaltrafficdesigns.com/wp-content/uploads/2023/07/AdobeStock_279849175-1024x819.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 50%;
     cursor: pointer;
     transition: transform .3s ease, --light .3s, --dark .3s;
+    animation-name: fade-in;
+    animation-duration: .3s;
 
     &:hover {
         --dark: rgba(0, 0, 0, 0.5);
@@ -47,6 +49,7 @@
 
     &__actions {
         display: flex;
+        align-items: end;
         gap: 1.375rem;
     }
 
@@ -57,7 +60,7 @@
     &__action {
         position: relative;
         display: flex;
-        justify-content: space-between;
+        gap: 0.5rem;
         align-items: center;
         flex-direction: column;
         font-size: 0.625rem;
