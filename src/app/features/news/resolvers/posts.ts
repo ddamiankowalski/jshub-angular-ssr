@@ -1,10 +1,8 @@
 import { ResolveFn } from "@angular/router";
 import { News } from "../types/news";
+import { inject } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 export const newsResolver: ResolveFn<News[]> = () => {
-    return Promise.resolve([
-        { uuid: '1' },
-        { uuid: '2' },
-        { uuid: '3' }
-    ])
+    return inject(HttpClient).get<News[]>('api/article/all');
 }

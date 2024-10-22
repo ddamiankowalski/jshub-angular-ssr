@@ -62,7 +62,8 @@
           "buildTarget": "javascripthub:build:production"
         },
         "development": {
-          "buildTarget": "javascripthub:build:development"
+          "buildTarget": "javascripthub:build:development",
+          "proxyConfig": "proxy.conf.json"
         }
       },
       "defaultConfiguration": "development"

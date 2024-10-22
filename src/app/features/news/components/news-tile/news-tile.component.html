@@ -1,19 +1,21 @@
-<div class="jshub-news-tile__info">
-    <span class="jshub-news-tile__title">How closures change the world</span>
-    <div class="jshub-news-tile__actions">
-        <div class="jshub-news-tile__action">
-            <div class="jshub-news-tile__icon-wrapper">
-                <div class="jshub-news-tile__action-icon"></div>
-                <ng-icon name="cssHeart" />
+@if(news(); as item) {
+    <div class="jshub-news-tile__info">
+        <span class="jshub-news-tile__title">{{ item.title }}</span>
+        <div class="jshub-news-tile__actions">
+            <div class="jshub-news-tile__action">
+                <div class="jshub-news-tile__icon-wrapper">
+                    <div class="jshub-news-tile__action-icon"></div>
+                    <ng-icon name="cssHeart" />
+                </div>
+                <span class="jshub-news-tile__action-value">122</span>
             </div>
-            <span class="jshub-news-tile__action-value">122</span>
-        </div>
-        <div class="jshub-news-tile__action">
-            <div class="jshub-news-tile__icon-wrapper">
-                <div class="jshub-news-tile__action-icon"></div>
-                <ng-icon name="cssComment" />
+            <div class="jshub-news-tile__action">
+                <div class="jshub-news-tile__icon-wrapper">
+                    <div class="jshub-news-tile__action-icon"></div>
+                    <ng-icon name="cssComment" />
+                </div>
+                <span class="jshub-news-tile__action-value">122</span>
             </div>
-            <span class="jshub-news-tile__action-value">122</span>
         </div>
     </div>
-</div>
+}

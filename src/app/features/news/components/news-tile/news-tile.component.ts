@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, HostListener, inject, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, HostListener, inject, input, output, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
 import { NgIconComponent } from "@ng-icons/core";
-import { Router } from "@angular/router";
+import { News } from "../../types/news";
 
 @Component({
     standalone: true,
@@ -15,11 +15,13 @@ import { Router } from "@angular/router";
 })
 export class NewsTileComponent {
     @HostListener('click') public onClick(): void {
-        this._router.navigate(['/', 'article', '1'])
+        this.newsClick.emit(this.news()._id);
     }
 
+    public newsClick = output<string>()
+    public news = input.required<News>();
+
     private _classBinder = inject(ClassBinder);
-    private _router = inject(Router);
 
     constructor() {
         this._classBinder.bind('jshub-news-tile');

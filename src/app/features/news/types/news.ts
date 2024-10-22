@@ -1,3 +1,5 @@
 export type News = {
-    uuid: string;
+    _id: string;
+    title: string;
+    text: string;
 }
