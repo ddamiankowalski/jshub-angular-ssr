@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, ViewEncapsulation
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
 import { injectRouteData } from "ngxtension/inject-route-data";
 import { ArticleInfoComponent } from "../article-info/article-info.component";
+import { ArticleSectionComponent } from "../article-section/article-section.component";
 
 @Component({
     standalone: true,
@@ -10,7 +11,7 @@ import { ArticleInfoComponent } from "../article-info/article-info.component";
     styleUrl: 'article.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    imports: [ArticleInfoComponent],
+    imports: [ArticleInfoComponent, ArticleSectionComponent],
     providers: [ClassBinder]
 })
 export class ArticleComponent {

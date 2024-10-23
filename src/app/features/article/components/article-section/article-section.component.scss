@@ -1,0 +1,24 @@
+.jshub-article-section {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 1rem auto;
+    color: #1E1E1E;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+
+    &__header {
+        font-weight: 600;
+        font-size: 2rem;
+        margin: 2rem 0;
+        font-weight: 600;
+    }
+
+    &__paragraph {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 2.5em;
+        text-align: justify;
+    }
+}
