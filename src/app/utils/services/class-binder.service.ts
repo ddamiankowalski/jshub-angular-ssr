@@ -15,4 +15,12 @@ export class ClassBinder {
     public unbind(className: string): void {
         this._nativeElement.classList.remove(className);
     }
+
+    public conditionalBind(condition: boolean, className: string): void {
+        if(condition) {
+            this._nativeElement.classList.add(className);
+        } else {
+            this._nativeElement.classList.remove(className);
+        }
+    }
 }

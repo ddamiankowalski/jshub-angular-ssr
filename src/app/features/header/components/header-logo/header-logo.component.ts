@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, output, ViewEncapsulation } from '@angular/core';
 import { ClassBinder } from '../../../../utils/services/class-binder.service';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   providers: [ClassBinder]
 })
 export class HeaderLogoComponent {
+  public logoClick = output<void>();
+
   private _classBinder = inject(ClassBinder);
   private _router = inject(Router);
 
@@ -20,6 +22,7 @@ export class HeaderLogoComponent {
   }
 
   public onClick(): void {
-    this._router.navigate(['/'])
+    this._router.navigate(['/']);
+    this.logoClick.emit();
   }
 }

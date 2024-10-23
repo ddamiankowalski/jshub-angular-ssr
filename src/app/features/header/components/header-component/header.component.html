@@ -1,3 +1,11 @@
-<jshub-header-logo />
-<jshub-header-menu />
-<jshub-header-auth />
+<header class="jshub-header__unfixed">
+    <jshub-header-logo />
+    <jshub-header-menu />
+    <jshub-header-auth />
+</header>
+
+<header class="jshub-header__fixed" [class.jshub-header__fixed--hidden]="!fixedVisible()">
+    <jshub-header-logo (logoClick)="onLogoClick()" />
+    <jshub-header-menu />
+    <jshub-header-auth />
+</header>

@@ -43,3 +43,13 @@ html, body {
         opacity: 1;
     }
 }
+
+@keyframes fade-in-header {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

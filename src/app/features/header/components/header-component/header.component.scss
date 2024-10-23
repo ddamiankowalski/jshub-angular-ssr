@@ -1,8 +1,37 @@
 .jshub-header {
-    height: fit-content;
-    width: 100%;
-    padding: 3.75rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
+
+    &__fixed {
+        top: 0;
+        position: fixed;
+        height: fit-content;
+        width: 80%;
+        margin: 0 auto;
+        padding: 3rem 0 5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        opacity: 0.5;
+        background: linear-gradient(rgba(255, 255, 255, 1), 70%, rgba(255, 255, 255, 0));
+        transition: opacity .3s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &--hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__unfixed {
+        height: fit-content;
+        width: 100%;
+        padding: 3.75rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
