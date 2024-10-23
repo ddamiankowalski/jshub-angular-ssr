@@ -16,6 +16,16 @@ export class ArticleSectionComponent {
     
     private _classBinder = inject(ClassBinder);
 
+    public get sectionId(): string {
+        const header = this.header();
+
+        if(!header) {
+            return '';
+        }
+
+        return header.toLowerCase().split(' ').join('-');
+    }
+
     constructor() {
         this._classBinder.bind('jshub-article-section')
     }
