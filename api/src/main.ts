@@ -12,7 +12,7 @@ const port = process.env['PORT'] || 3000;
 const app = express();
 app.use(bodyParser.json())
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('api/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use('/api/article', articleRouter);
 
