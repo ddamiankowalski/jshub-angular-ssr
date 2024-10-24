@@ -24,6 +24,7 @@ export class NewsTileComponent {
 
     public url = computed(() => {
         const news = this.news();
+        console.log(news);
         return `api/assets/${Math.random() > 0.5 ? '1' : '2'}.webp`;
     })
 

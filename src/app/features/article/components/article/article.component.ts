@@ -21,6 +21,7 @@ export class ArticleComponent {
 
     public url = computed(() => {
         const article = this.article();
+        console.log(article);
         return `api/assets/${Math.random() > 0.5 ? '2' : '1'}.webp`;
     })
 
