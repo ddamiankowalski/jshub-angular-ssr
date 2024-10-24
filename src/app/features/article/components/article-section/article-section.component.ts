@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
+import { RouterModule } from "@angular/router";
 
 @Component({
     standalone: true,
@@ -8,7 +9,8 @@ import { ClassBinder } from "../../../../utils/services/class-binder.service";
     styleUrl: 'article-section.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    providers: [ClassBinder]
+    providers: [ClassBinder],
+    imports: [RouterModule]
 })
 export class ArticleSectionComponent {
     public header = input<string>();

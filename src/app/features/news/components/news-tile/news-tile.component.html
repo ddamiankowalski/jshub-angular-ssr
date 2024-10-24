@@ -1,20 +1,27 @@
 @if(news(); as item) {
-    <div class="jshub-news-tile__info">
-        <span class="jshub-news-tile__title">{{ item.title }}</span>
-        <div class="jshub-news-tile__actions">
-            <div class="jshub-news-tile__action">
-                <div class="jshub-news-tile__icon-wrapper">
-                    <div class="jshub-news-tile__action-icon"></div>
-                    <ng-icon name="cssHeart" />
+    <div class="jshub-news-tile__wrapper" [ngStyle]="{
+        'background': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('+ url() +')',
+        'background-size': 'cover',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+    }">
+        <div class="jshub-news-tile__info">
+            <span class="jshub-news-tile__title">{{ item.title }}</span>
+            <div class="jshub-news-tile__actions">
+                <div class="jshub-news-tile__action">
+                    <div class="jshub-news-tile__icon-wrapper">
+                        <div class="jshub-news-tile__action-icon"></div>
+                        <ng-icon name="cssHeart" />
+                    </div>
+                    <span class="jshub-news-tile__action-value">122</span>
                 </div>
-                <span class="jshub-news-tile__action-value">122</span>
-            </div>
-            <div class="jshub-news-tile__action">
-                <div class="jshub-news-tile__icon-wrapper">
-                    <div class="jshub-news-tile__action-icon"></div>
-                    <ng-icon name="cssComment" />
+                <div class="jshub-news-tile__action">
+                    <div class="jshub-news-tile__icon-wrapper">
+                        <div class="jshub-news-tile__action-icon"></div>
+                        <ng-icon name="cssComment" />
+                    </div>
+                    <span class="jshub-news-tile__action-value">122</span>
                 </div>
-                <span class="jshub-news-tile__action-value">122</span>
             </div>
         </div>
     </div>

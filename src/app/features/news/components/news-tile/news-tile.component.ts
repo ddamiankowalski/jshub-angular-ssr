@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, input, output, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, computed, ElementRef, HostListener, inject, input, output, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "../../../../utils/services/class-binder.service";
 import { NgIconComponent } from "@ng-icons/core";
 import { News } from "../../types/news";
+import { NgStyle } from "@angular/common";
 
 @Component({
     standalone: true,
@@ -11,7 +12,7 @@ import { News } from "../../types/news";
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ClassBinder],
-    imports: [NgIconComponent]
+    imports: [NgIconComponent, NgStyle]
 })
 export class NewsTileComponent {
     @HostListener('click') public onClick(): void {
@@ -20,6 +21,11 @@ export class NewsTileComponent {
 
     public newsClick = output<string>()
     public news = input.required<News>();
+
+    public url = computed(() => {
+        const news = this.news();
+        return `api/assets/${Math.random() > 0.5 ? '1' : '2'}.webp`;
+    })
 
     private _classBinder = inject(ClassBinder);
     private _elementRef = inject(ElementRef);

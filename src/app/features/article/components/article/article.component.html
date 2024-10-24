@@ -4,7 +4,16 @@
     </div>
     
     <jshub-article-info />
-    <div class="jshub-article__image"></div>
+
+    <div class="jshub-article__image" 
+        [ngStyle]="{
+            'background': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('+ url() +')',
+            'background-size': 'cover',
+            'background-repeat': 'no-repeat',
+            'background-position': 'center',
+        }">
+    </div>
+    
     <jshub-article-section [content]="'This is some content'" header="What are closures?" />
     <jshub-article-section [content]="'This is some content'" header="Code examples" />
 }
