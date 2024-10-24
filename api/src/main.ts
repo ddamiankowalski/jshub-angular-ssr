@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.use('/article', articleRouter);
+app.use('/api/article', articleRouter);
 
 const run = async (): Promise<void> => {
   await connectDatabase();
