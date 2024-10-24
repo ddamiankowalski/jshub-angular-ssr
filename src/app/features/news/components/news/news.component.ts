@@ -31,16 +31,12 @@ export class NewsComponent {
     public onNewsClick(id: string): void {
         const tiles = this._tiles();
 
-        // Promise.all(tiles.map((tile, index) => {
-        //     if(tile.news()._id === id) {
-        //         return tile.fade(index * 50 + 300)
-        //     }
+        Promise.all(tiles.map((tile, index) => {
+            if(tile.news()._id === id) {
+                return tile.fade(index * 50 + 300)
+            }
              
-        //     return tile.fade(50)
-        // })).then(() => {
-        // })
-
-        this._router.navigate(['/', 'article', id])
-
+            return tile.fade(50)
+        })).then(() => this._router.navigate(['/', 'article', id]))
     }
 }
