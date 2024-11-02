@@ -12,7 +12,7 @@ module.exports = [
         'error',
         {
           type: 'attribute',
-          prefix: 'lib',
+          prefix: 'jshub',
           style: 'camelCase',
         },
       ],
@@ -20,7 +20,7 @@ module.exports = [
         'error',
         {
           type: 'element',
-          prefix: 'lib',
+          prefix: 'jshub',
           style: 'kebab-case',
         },
       ],
