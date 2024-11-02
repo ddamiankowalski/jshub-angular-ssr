@@ -25,7 +25,7 @@
         "styles": ["apps/javascripthub/src/styles.scss"],
         "scripts": [],
         "server": "apps/javascripthub/src/main.server.ts",
-        "prerender": true,
+        "prerender": false,
         "ssr": {
           "entry": "apps/javascripthub/server.ts"
         }
