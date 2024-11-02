@@ -18,7 +18,6 @@ export const articleResolver: ResolveFn<Article> = (
 export const allArticleResolver: ResolveFn<Article[]> = () => {
     const article = inject(ArticleService);
 
-    console.log('teraz')
     return inject(HttpClient).get<Article[]>('api/article/all').pipe(
         tap(articles => article.setArticles(articles))
     );

@@ -5,10 +5,11 @@ dotenv.config();
 
 /**
  * Connects to mongo db database.
- * 
- * @returns 
+ *
+ * @returns
  */
 export const connectDatabase = (): Promise<void> => {
+    console.log(`Connecting to the database. The uri: ${process.env['DB_URI']}`)
     const uri = process.env['DB_URI'];
 
     if(!uri) {

@@ -12,15 +12,14 @@ const port = process.env['PORT'] || 3000;
 const app = express();
 app.use(bodyParser.json())
 
-app.use('/api/assets', express.static(path.join(__dirname, 'assets')));
-
-app.use('/api/article', articleRouter);
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/article', articleRouter);
 
 const run = async (): Promise<void> => {
   await connectDatabase();
 
   app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/api`);
+    console.log(`API Listening at http://localhost:${port}`);
   });
 }
 

@@ -24,10 +24,13 @@ export function app(): express.Express {
 
   const proxyOptions = {
     target: 'http://localhost:3001',
-    changeOrigin: true
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': '',
+  },
 };
 
-  server.get('/api/**', createProxyMiddleware(proxyOptions));
+  server.all('/api/**', createProxyMiddleware(proxyOptions));
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
