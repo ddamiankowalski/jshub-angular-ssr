@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { HeaderComponent } from "./header/components/header-component/header.component";
+import { ClassBinder } from '@javascripthub/utils';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  imports: [RouterModule, HeaderComponent],
+  selector: 'jshub-root',
+  templateUrl: 'app.component.html',
+  styleUrl: 'app.component.scss',
+  providers: [ClassBinder]
 })
 export class AppComponent {
-  title = 'javascripthub';
+  public title = 'jshub.dev';
+
+  private _classBinder = inject(ClassBinder)
+
+  constructor() {
+    this._classBinder.bind('jshub-root');
+  }
 }

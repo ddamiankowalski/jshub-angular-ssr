@@ -1,12 +1,21 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideIcons, provideNgIconsConfig } from '@ng-icons/core';
+import { cssComment, cssGitFork, cssHashtag, cssHeart } from '@ng-icons/css.gg';
+import { bootstrapGithub, bootstrapLinkedin } from '@ng-icons/bootstrap-icons';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideClientHydration(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(appRoutes),
-  ],
+    provideHttpClient(withFetch()),
+    provideClientHydration(withEventReplay()),
+    provideIcons({ cssHeart, cssComment, cssHashtag, cssGitFork, bootstrapLinkedin, bootstrapGithub }),
+    provideNgIconsConfig({
+      size: '1rem',
+    }),
+  ]
 };

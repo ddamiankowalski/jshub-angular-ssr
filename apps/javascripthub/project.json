@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/javascripthub",
         "index": "apps/javascripthub/src/index.html",
         "browser": "apps/javascripthub/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "apps/javascripthub/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -61,7 +61,8 @@
           "buildTarget": "javascripthub:build:production"
         },
         "development": {
-          "buildTarget": "javascripthub:build:development"
+          "buildTarget": "javascripthub:build:development",
+          "proxyConfig": "proxy.conf.json"
         }
       },
       "defaultConfiguration": "development"

@@ -1,0 +1,25 @@
+.jshub-header-menu {
+    &__menu {
+        all: unset;
+    }
+
+    &__items {
+        all: unset;
+        display: flex;
+        gap: 3.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #474747;
+    }
+
+    &__item {
+        all: unset;
+        opacity: 0.75;
+        cursor: pointer;
+        transition: opacity .3s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

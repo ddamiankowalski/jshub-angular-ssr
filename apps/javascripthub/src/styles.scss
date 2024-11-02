@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('highlight.js/styles/github-dark.css');
+
+code {
+  padding: 1.5rem 1.5rem;
+  display: block;
+  background-color: #22272e;
+  color: #adbac7;
+  border-radius: 0.75rem;
+  overflow: scroll;
+}
+
+pre {
+  margin: 4rem 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height: 100%;
+    width: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    all: unset;
+}
+
+.jshub-root {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: auto;
+    width: 65%;
+    height: 100%;
+
+    @media only screen and (max-width: 1200px) {
+        width: 85%;
+    }
+
+    @media only screen and (max-width: 750px) {
+        width: 100%;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-static {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-header {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

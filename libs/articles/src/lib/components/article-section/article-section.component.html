@@ -1,0 +1,26 @@
+@if(section(); as section) {
+    <section [id]="sectionId" class="jshub-article-section__section">
+
+    @switch(section.category) {
+        @case('HEADER') {
+            <h2 class="jshub-article-section__header">
+                <a 
+                tabindex="0" 
+                (keydown)="scrollInto()" 
+                (click)="scrollInto()"
+                [routerLink]="['./']"  
+                [fragment]="sectionId"
+                >{{ section.value }}</a>
+            </h2>
+        }
+
+        @case('PARAGRAPH') {
+            <p class="jshub-article-section__paragraph">{{ section.value }}</p>
+        }
+
+        @case('CODE') {
+            <pre><code class="language-javascript" [innerHTML]="highlight(section.value)"></code></pre>
+        }
+    }
+    </section>
+}

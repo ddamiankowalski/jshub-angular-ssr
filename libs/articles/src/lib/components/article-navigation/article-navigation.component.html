@@ -1,0 +1,17 @@
+<nav class="jshub-article-navigation__navigation" [class.jshub-article-navigation__navigation--visible]="navigation.activeSection()">
+    @for(section of sections(); track section) {
+        <div
+            (click)="onSectionClick(section)"
+            (keydown)="onSectionClick(section)"
+            tabindex="0" 
+            class="jshub-article-navigation__section"
+            [class.jshub-article-navigation__section--active]="section === navigation.activeSection()"
+        >
+            <span class="jshub-article-navigation__section-title">{{ section.value }}</span>
+            
+            @if(section.description) {
+                <span class="jshub-article-navigation__section-description">{{ section.description }}</span>
+            }
+        </div>
+    }
+</nav>

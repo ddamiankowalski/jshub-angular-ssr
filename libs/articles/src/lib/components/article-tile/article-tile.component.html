@@ -1,0 +1,28 @@
+@if(article(); as item) {
+    <div (click)="onArticleClick()" (keydown)="onArticleClick()" tabindex="0" class="jshub-article-tile__wrapper" [ngStyle]="{
+        'background': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('+ url() +')',
+        'background-size': 'cover',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+    }">
+        <div class="jshub-article-tile__info">
+            <span class="jshub-article-tile__title">{{ item.title }}</span>
+            <div class="jshub-article-tile__actions">
+                <div (click)="onLikeClick()" (keydown)="onLikeClick()" tabindex="0" class="jshub-article-tile__action">
+                    <div class="jshub-article-tile__icon-wrapper">
+                        <div class="jshub-article-tile__action-icon"></div>
+                        <ng-icon name="cssHeart" />
+                    </div>
+                    <span class="jshub-article-tile__action-value">{{ item.likes }}</span>
+                </div>
+                <div class="jshub-article-tile__action">
+                    <div class="jshub-article-tile__icon-wrapper">
+                        <div class="jshub-article-tile__action-icon"></div>
+                        <ng-icon name="cssComment" />
+                    </div>
+                    <span class="jshub-article-tile__action-value">122</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
