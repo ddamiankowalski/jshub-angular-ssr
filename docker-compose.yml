@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: dkowalski1997/jshub:latest
     container_name: jshub_api
     restart: always
     ports:
@@ -18,9 +16,9 @@ services:
     image: mongo:latest
     container_name: jshub_db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=t4jn3h4slo
+      - MONGO_INITDB_DATABASE=jshub
     restart: always
     ports:
       - "27017:27017"
