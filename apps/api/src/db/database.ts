@@ -10,7 +10,12 @@ dotenv.config();
  */
 export const connectDatabase = (): Promise<void> => {
     console.log(`Connecting to the database. The uri: ${process.env['DB_URI']}`)
-    const uri = process.env['DB_URI'];
+
+    const user = process.env['DB_USER'];
+    const pass = process.env['DB_PASS'];
+    const addr = process.env['DB_ADDR'];
+
+    const uri = `mongodb://${user}:${pass}@${addr}`;
 
     if(!uri) {
         throw new Error('Could not connect to the database. No uri provided.');
