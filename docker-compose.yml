@@ -16,9 +16,8 @@ services:
     image: mongo:latest
     container_name: jshub_db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME: root
-      - MONGO_INITDB_ROOT_PASSWORD: t4jn3h4slo
-      - MONGO_INITDB_DATABASE: jshub
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=t4jn3h4slo
     restart: always
     ports:
       - "27017:27017"
