@@ -8,9 +8,10 @@ services:
     ports:
       - "4000:4000"
     environment:
-      - DB_URI=mongodb://mongo:27017/jshub
+      - DB_URI=mongodb://mongo:27017
       - DB_USER=root
       - DB_PW=t4jn3h4slo
+      - DB_NAME=jshub
     depends_on:
       - mongo
 
