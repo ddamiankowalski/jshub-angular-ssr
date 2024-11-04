@@ -2,10 +2,7 @@ version: '3.8'
 
 services:
   api:
-    image: docker pudkowalski1997/jshub
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    image: dkowalski1997/jshub
     container_name: jshub_api
     restart: always
     ports:
