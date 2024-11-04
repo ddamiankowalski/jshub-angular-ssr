@@ -9,6 +9,8 @@ services:
       - "4000:4000"
     environment:
       - DB_URI=mongodb://mongo:27017/jshub
+      - DB_USER=root
+      - DB_PW=t4jn3h4slo
     depends_on:
       - mongo
 
