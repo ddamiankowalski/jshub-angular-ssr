@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: jshub_api
+    restart: always
     ports:
       - "4000:4000"
     environment:
@@ -14,41 +16,13 @@ services:
 
   mongo:
     image: mongo:latest
+    container_name: jshub_db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+    restart: always
     ports:
       - "27017:27017"
     volumes:
-      - jshub-mongodb:/data/db
-
-volumes:
-  jshub-mongodb:
-
-
-#   version: '3.8'
-
-# services:
-#   express-app:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     ports:
-#       - "4000:4000"  # Expose Express app on port 4000
-#     environment:
-#       - MONGO_URI=mongodb://mongo:27017/mydatabase  # Connection string for MongoDB
-
-#   mongo:
-#     image: mongo:latest
-#     # No ports section here since it's internal-only
-#     volumes:
-#       - mongo_data:/data/db  # Persist MongoDB data
-
-#   express-worker:
-#     build:
-#       context: ./path/to/worker  # Adjust this path to your worker's Dockerfile
-#     environment:
-#       - MONGO_URI=mongodb://mongo:27017/mydatabase  # Connection string for MongoDB
-#     depends_on:
-#       - mongo
-
-# volumes:
-#   mongo_data:
-
+      - ./db_data/:/data/db
