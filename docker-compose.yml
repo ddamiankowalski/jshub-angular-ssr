@@ -5,6 +5,7 @@ services:
     image: dkowalski1997/jshub:latest
     container_name: jshub_api
     restart: always
+    platform: linux/amd64
     ports:
       - "4000:4000"
     environment:
@@ -20,6 +21,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=t4jn3h4slo
       - MONGO_INITDB_DATABASE=jshub
     restart: always
+    platform: linux/amd64
     ports:
       - "27017:27017"
     volumes:
