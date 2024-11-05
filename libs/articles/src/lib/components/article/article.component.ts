@@ -17,9 +17,9 @@ import { injectParams } from 'ngxtension/inject-params';
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     imports: [
-        ArticleInfoComponent, 
-        ArticleSectionComponent, 
-        NgStyle, 
+        ArticleInfoComponent,
+        ArticleSectionComponent,
+        NgStyle,
         ArticleAuthorComponent,
         ArticleNavigationComponent
     ],
@@ -50,8 +50,6 @@ export class ArticleComponent implements AfterViewInit {
 
     constructor() {
         this._classBinder.bind('jshub-article');
-
-        console.log(this.article())
     }
 
     public ngAfterViewInit(): void {
@@ -59,7 +57,7 @@ export class ArticleComponent implements AfterViewInit {
 
         if(article) {
             const title = article.title;
-            
+
             this._title.setTitle(`jshub | ${title}`);
             this._meta.addTag({ name: "description", content: title });
         }
