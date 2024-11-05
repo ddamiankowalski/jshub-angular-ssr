@@ -1,5 +1,6 @@
 import { connectDatabase } from './db/database';
 import { articleRouter } from './routes/article-route';
+import { authorRouter } from './routes/author-route';
 
 import express from 'express';
 import * as path from 'path';
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/article', articleRouter);
+app.use('/author', authorRouter);
 
 const run = async (): Promise<void> => {
   await connectDatabase();

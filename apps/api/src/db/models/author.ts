@@ -10,4 +10,4 @@ const authorSchema = new mongoose.Schema({
     githubUrl: { type: String },
 }, { timestamps: true })
 
-export const Article = mongoose.model('Author', authorSchema);
+export const Author = mongoose.model('Author', authorSchema);
