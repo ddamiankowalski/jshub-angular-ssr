@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed, inject, ViewEncapsulation } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, inject, ViewEncapsulation } from "@angular/core";
 import { ArticleInfoComponent } from "../article-info/article-info.component";
 import { ArticleSectionComponent } from "../article-section/article-section.component";
 import { NgStyle } from "@angular/common";
@@ -8,6 +8,7 @@ import { ArticleNavigationComponent } from "../article-navigation/article-naviga
 import { ClassBinder } from "@javascripthub/utils";
 import { ArticleService } from "../../services/article.service";
 import { injectParams } from 'ngxtension/inject-params';
+import { NavigationPage } from "@javascripthub/navigation";
 
 @Component({
     standalone: true,
@@ -25,7 +26,7 @@ import { injectParams } from 'ngxtension/inject-params';
     ],
     providers: [ClassBinder]
 })
-export class ArticleComponent implements AfterViewInit {
+export class ArticleComponent extends NavigationPage implements AfterViewInit {
     public routeParam = injectParams('id');
 
     public article = computed(() => {
@@ -47,8 +48,10 @@ export class ArticleComponent implements AfterViewInit {
     private _classBinder = inject(ClassBinder);
     private _title = inject(Title);
     private _meta = inject(Meta);
+    private _elementRef = inject(ElementRef);
 
     constructor() {
+        super();
         this._classBinder.bind('jshub-article');
     }
 
@@ -61,5 +64,21 @@ export class ArticleComponent implements AfterViewInit {
             this._title.setTitle(`jshub | ${title}`);
             this._meta.addTag({ name: "description", content: title });
         }
+    }
+
+    protected override _fadeOut(): Promise<Animation> {
+      const keyframes = [
+          { opacity: 1 },
+          { opacity: 0 }
+      ];
+
+      const options = {
+          duration: 250,
+          iterations: 1,
+          fill: 'forwards' as FillMode,
+      }
+
+      const animation = this._elementRef.nativeElement.animate(keyframes, options);
+      return animation.finished;
     }
 }

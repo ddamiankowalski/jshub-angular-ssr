@@ -21,7 +21,7 @@ export class HeaderMenuComponent {
 
     public items: MenuItem[] = [
         { label: 'Articles', route: '' },
-        { label: 'Courses', route: 'courses' },
+        { label: 'Courses', route: '' },
         { label: 'Authors', route: 'authors' },
     ];
 
