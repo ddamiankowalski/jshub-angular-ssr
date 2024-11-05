@@ -8,6 +8,6 @@ export class AuthorService {
   private _http = inject(HttpClient);
 
   public getAll$(): Observable<Author[]> {
-    return this._http.get<Author[]>(`api/author`)
+    return this._http.get<Author[]>('api/author/all')
   }
 }
