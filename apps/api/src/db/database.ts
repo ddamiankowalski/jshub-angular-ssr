@@ -9,12 +9,13 @@ dotenv.config();
  * @returns
  */
 export const connectDatabase = (): Promise<void> => {
-    console.log(`Connecting to the database. The uri: ${process.env['DB_URI']}`)
     const uri = `${process.env['DB_URI']}/${process.env['DB_NAME']}`;
 
     if(!uri) {
         throw new Error('Could not connect to the database. No uri provided.');
     }
+
+    console.log(`Connecting to the database. The uri: ${uri}`)
 
     return mongoose.connect(uri, {
       authSource: 'admin',
