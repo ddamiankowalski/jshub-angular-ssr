@@ -3,12 +3,12 @@ import { Directive, inject } from '@angular/core';
 
 @Directive()
 export abstract class NavigationPage {
-  private _router = inject(Router);
+  protected _router = inject(Router);
 
-  public navigate(commands: string[]): void {
-    this._fadeOut()
+  public navigate(commands: string[], ...args: unknown[]): void {
+    this._fadeOut(args)
       .then(() => this._router.navigate(commands))
   }
 
-  protected abstract _fadeOut(): Promise<void>;
+  protected abstract _fadeOut(...args: unknown[]): Promise<unknown>;
 }
