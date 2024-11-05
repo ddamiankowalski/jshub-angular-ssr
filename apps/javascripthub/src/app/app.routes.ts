@@ -13,6 +13,11 @@ export const appRoutes: Route[] = [
         resolve: { article: articleResolver }
     },
     {
+        path: 'authors',
+        component: AuthorsComponent,
+        resolve: { authors: authorsResolver }
+    },
+    {
         path: '**',
         redirectTo: '',
         pathMatch: 'full'

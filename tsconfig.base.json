@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@javascripthub/articles": ["libs/articles/src/index.ts"],
+      "@javascripthub/authors": ["libs/authors/src/index.ts"],
       "@javascripthub/utils": ["libs/utils/src/index.ts"]
     }
   },

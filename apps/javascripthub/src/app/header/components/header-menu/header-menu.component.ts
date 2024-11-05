@@ -14,7 +14,7 @@ export class HeaderMenuComponent {
     public items = [
         'Articles',
         'Courses',
-        'About me',
+        'Authors',
     ];
 
     private _classBinder = inject(ClassBinder);

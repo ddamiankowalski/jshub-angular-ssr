@@ -40,7 +40,7 @@ export class ArticlesListComponent {
             if(tile.article()._id === id) {
                 return tile.fade(index * 50 + 300)
             }
-             
+
             return tile.fade(50)
         })).then(() => this._router.navigate(['/', 'article', id]))
     }
