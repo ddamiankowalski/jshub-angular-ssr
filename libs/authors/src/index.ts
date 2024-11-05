@@ -1,1 +1,3 @@
-export * from './lib/authors/authors.component';
+export * from './lib/components';
+export * from './lib/resolvers';
+export * from './lib/interfaces';

@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { allArticleResolver, ArticleComponent, articleResolver, ArticlesListComponent } from '@javascripthub/articles';
+import { AuthorsComponent, authorsResolver } from '@javascripthub/authors';
 
 export const appRoutes: Route[] = [
     {
