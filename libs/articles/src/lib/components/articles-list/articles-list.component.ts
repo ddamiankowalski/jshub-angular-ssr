@@ -17,7 +17,7 @@ import { NavigationPage } from "@javascripthub/navigation";
     imports: [ArticleTileComponent, JsonPipe]
 })
 export class ArticlesListComponent extends NavigationPage {
-    public article = inject(ArticleService)
+    public article = inject(ArticleService);
 
     private _classBinder = inject(ClassBinder);
     private _title = inject(Title);
@@ -33,7 +33,7 @@ export class ArticlesListComponent extends NavigationPage {
     }
 
     public onArticleClick(id: string): void {
-      this.navigate(['/', 'article', id], id);
+      this._navigation.navigate(['/', 'article', id], id);
     }
 
     protected override _fadeOut(args: unknown[]): Promise<Animation[]> {

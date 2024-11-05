@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
-import { Router } from "@angular/router";
+import { NavigationService } from "@javascripthub/navigation";
 import { ClassBinder } from "@javascripthub/utils";
 
 interface MenuItem {
@@ -17,11 +17,11 @@ interface MenuItem {
     providers: [ClassBinder]
 })
 export class HeaderMenuComponent {
-    private _router = inject(Router)
+    private _navigation = inject(NavigationService)
 
     public items: MenuItem[] = [
-        { label: 'Articles', route: '/' },
-        { label: 'Courses', route: '/' },
+        { label: 'Articles', route: '' },
+        { label: 'Courses', route: 'courses' },
         { label: 'Authors', route: 'authors' },
     ];
 
@@ -32,6 +32,6 @@ export class HeaderMenuComponent {
     }
 
     public onItemClick(item: MenuItem): void {
-      this._router.navigate(['/', item.route])
+      this._navigation.navigate(['/', item.route])
     }
 }
