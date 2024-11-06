@@ -18,6 +18,7 @@
       "@javascripthub/articles": ["libs/articles/src/index.ts"],
       "@javascripthub/authors": ["libs/authors/src/index.ts"],
       "@javascripthub/navigation": ["libs/navigation/src/index.ts"],
+      "@javascripthub/testing": ["libs/testing/src/index.ts"],
       "@javascripthub/utils": ["libs/utils/src/index.ts"]
     }
   },
