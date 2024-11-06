@@ -1,13 +1,16 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
 import { ClassBinder } from "@javascripthub/utils";
+import { NgIcon } from "@ng-icons/core";
 
 @Component({
   standalone: true,
   selector: 'jshub-authors',
-  providers: [ClassBinder],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: 'authors.component.scss',
-  templateUrl: 'authors.component.html'
+  templateUrl: 'authors.component.html',
+  providers: [ClassBinder],
+  imports: [NgIcon],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthorsComponent {
   private _classBinder = inject(ClassBinder);
