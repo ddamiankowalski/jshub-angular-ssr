@@ -21,6 +21,6 @@ describe('AppComponent', () => {
   it(`should have as title 'javascripthub'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('javascripthub');
+    expect(app.title).toEqual('jshub.dev');
   });
 });
