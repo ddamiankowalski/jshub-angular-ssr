@@ -18,7 +18,7 @@
 
     &:hover {
         --dark: rgba(0, 0, 0, 0.5);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;    
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         transform: scale(1.025);
 
         .jshub-article-tile__title {
@@ -110,7 +110,7 @@
     initial-value: rgba(0, 0, 0, 0.75);
     inherits: false;
   }
-  
+
   @property --light {
     syntax: '<color>';
     initial-value: rgba(0, 0, 0, 0);

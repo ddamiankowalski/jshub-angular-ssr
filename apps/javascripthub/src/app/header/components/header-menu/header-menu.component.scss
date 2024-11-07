@@ -3,7 +3,45 @@
         all: unset;
 
         @media screen and (max-width: 750px) {
-          display: none;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          z-index: 2;
+          width: 80vw;
+          height: 100vh;
+          background-color: #ffffff;
+          transform: translate(0);
+          transition: transform .3s ease-in-out;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+
+          &--expanded {
+            display: flex;
+            transition: transform .4s ease-in-out;
+            transform: translate(125%);
+          }
+        }
+      }
+
+      &__backdrop {
+        display: none;
+
+        @media screen and (max-width: 750px) {
+          display: block;
+        }
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0);
+        pointer-events: none;
+        z-index: 1;
+        transition: background-color .3s ease;
+
+        &--visible {
+          pointer-events: all;
+          background-color: rgba(0, 0, 0, 0.35);
         }
       }
 
@@ -25,13 +63,30 @@
         font-size: 0.75rem;
         font-weight: 500;
         color: #474747;
+
+        @media screen and (max-width: 750px) {
+          width: 100%;
+          flex-direction: column;
+          margin: 3rem;
+          gap: 2.5rem;
+        }
     }
 
     &__item {
         all: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
         opacity: 0.75;
         cursor: pointer;
         transition: opacity .3s ease;
+
+        @media screen and (max-width: 750px) {
+          font-size: 1rem;
+          font-weight: 600;
+          width: fit-content;
+        }
 
         &:hover {
             opacity: 1;

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, computed, inject, signal, ViewEncapsulation } from "@angular/core";
 import { NavigationService } from "@javascripthub/navigation";
 import { ClassBinder } from "@javascripthub/utils";
 import { NgIcon } from "@ng-icons/core";
@@ -19,12 +19,19 @@ interface MenuItem {
     imports: [NgIcon]
 })
 export class HeaderMenuComponent {
+    public isExpanded = signal(false);
+    public iconName = computed(() => {
+      const isExpanded = this.isExpanded()
+
+      return isExpanded ? 'cssClose' : 'cssMenu'
+    })
+
     private _navigation = inject(NavigationService)
 
     public items: MenuItem[] = [
         { label: 'Articles', route: '' },
         // { label: 'Courses', route: '' },
-        { label: 'Authors', route: 'authors' },
+        { label: 'Who are we?', route: 'authors' },
     ];
 
     private _classBinder = inject(ClassBinder);
@@ -34,6 +41,15 @@ export class HeaderMenuComponent {
     }
 
     public onItemClick(item: MenuItem): void {
-      this._navigation.navigate(['/', item.route])
+      this._navigation.navigate(['/', item.route]);
+      this.isExpanded.set(false)
+    }
+
+    public onMobileClick(): void {
+      this.isExpanded.update(isExpanded => !isExpanded);
+    }
+
+    public onBackdropClick(): void {
+      this.isExpanded.set(false);
     }
 }
