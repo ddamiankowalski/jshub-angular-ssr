@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, inject, ViewEncapsulation } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, computed, inject, ViewEncapsulation } from "@angular/core";
 import { ArticleInfoComponent } from "../article-info/article-info.component";
 import { ArticleSectionComponent } from "../article-section/article-section.component";
 import { NgStyle } from "@angular/common";
@@ -48,7 +48,6 @@ export class ArticleComponent extends NavigationPage implements AfterViewInit {
     private _classBinder = inject(ClassBinder);
     private _title = inject(Title);
     private _meta = inject(Meta);
-    private _elementRef = inject(ElementRef);
 
     constructor() {
         super();
