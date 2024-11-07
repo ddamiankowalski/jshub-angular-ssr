@@ -1,23 +1,23 @@
 .jshub-header {
-    position: relative;
+  position: relative;
 
-    &__auth {
-      @media screen and (max-width: 750px) {
-        display: none;
-      }
+  &__auth {
+    @media screen and (max-width: 750px) {
+      display: none;
     }
+  }
 
-    header {
-        height: fit-content;
-        width: 100%;
-        padding: 2.5rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  header {
+    height: fit-content;
+    width: 100%;
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        @media screen and (max-width: 750px) {
-            width: 85%;
-            margin: 0 auto;
-        }
+    @media screen and (max-width: 750px) {
+      width: 85%;
+      margin: 0 auto;
     }
+  }
 }

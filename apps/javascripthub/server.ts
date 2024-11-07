@@ -11,7 +11,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 export function app(): express.Express {
   const server = express();
 
-  server.use(compression())
+  server.use(compression());
 
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -27,8 +27,8 @@ export function app(): express.Express {
     changeOrigin: true,
     pathRewrite: {
       '^/api': '',
-  },
-};
+    },
+  };
 
   server.all('/api/**', createProxyMiddleware(proxyOptions));
 
@@ -43,12 +43,11 @@ export function app(): express.Express {
     })
   );
 
-
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
-    console.log(`rendering route ${originalUrl}`)
+    console.log(`rendering route ${originalUrl}`);
 
     commonEngine
       .render({
@@ -56,7 +55,7 @@ export function app(): express.Express {
         documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }]
+        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));

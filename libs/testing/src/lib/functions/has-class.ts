@@ -6,6 +6,9 @@ import { ComponentFixture } from '@angular/core/testing';
  * @param className
  * @returns
  */
-export const hasClass = <T>(fixture: ComponentFixture<T>, className: string): boolean => {
+export const hasClass = <T>(
+  fixture: ComponentFixture<T>,
+  className: string
+): boolean => {
   return fixture.debugElement.classes[className];
-}
+};

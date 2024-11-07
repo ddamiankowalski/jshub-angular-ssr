@@ -1,87 +1,87 @@
 .jshub-article-author {
-    display: flex;
-    gap: 3.5rem;
-    justify-content: space-between;
-    width: 100%;
-    margin: 8rem auto;
+  display: flex;
+  gap: 3.5rem;
+  justify-content: space-between;
+  width: 100%;
+  margin: 8rem auto;
 
-    img {
-      border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 4rem auto;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: 1;
+    line-height: 2.25em;
+    text-align: justify;
+  }
+
+  &__tag {
+    color: black;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    height: 1.75rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    opacity: 0.75;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    border: 2px solid #f0db4f;
+    line-height: 2rem;
+
+    &:hover {
+      opacity: 1;
+      background-color: #f0db4f;
     }
+
+    &:focus {
+      outline: 4px solid rgba(240, 219, 79, 0.4);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__name-info {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1.25rem;
 
     @media screen and (max-width: 750px) {
-        flex-direction: column;
-        gap: 0.25rem;
-        margin: 4rem auto;
+      align-items: flex-start;
     }
+  }
 
-    &__right {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        flex-grow: 1;
-        line-height: 2.25em;
-        text-align: justify;
+  &__name {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: end;
+    text-wrap: nowrap;
+
+    @media screen and (max-width: 750px) {
+      text-align: start;
     }
+  }
 
-    &__tag {
-        color: black;
-        font-size: 0.75rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.25rem 1rem;
-        height: 1.75rem;
-        border-radius: 2rem;
-        cursor: pointer;
-        opacity: 0.75;
-        gap: 0.5rem;
-        transition: opacity .3s ease, background-color .3s ease;
-        border: 2px solid #F0DB4F;
-        line-height: 2rem;
-
-        &:hover {
-            opacity: 1;
-            background-color: #F0DB4F;
-        }
-
-        &:focus {
-            outline: 4px solid rgba(240, 219, 79, 0.4);
-        }
-    }
-
-    &__social {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    &__name-info {
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        gap: 1.25rem;
-
-        @media screen and (max-width: 750px) {
-            align-items: flex-start;
-        }
-    }
-
-    &__name {
-        display: flex;
-        flex-direction: column;
-        font-size: 1.5rem;
-        font-weight: 600;
-        text-align: end;
-        text-wrap: nowrap;
-
-        @media screen and (max-width: 750px) {
-            text-align: start;;
-        }
-    }
-
-    &__title {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 2.25em;
-    }
+  &__title {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.25em;
+  }
 }

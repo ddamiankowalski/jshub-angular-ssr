@@ -1,127 +1,127 @@
 .jshub-article-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 0.9125rem;
+  color: #0b0b0b;
+  animation-name: fade-in-static;
+  animation-duration: 1s;
+  margin-top: 1rem;
+
+  @media screen and (max-width: 1200px) {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-    font-size: 0.9125rem;
-    color: #0B0B0B;
-    animation-name: fade-in-static;
-    animation-duration: 1s;
-    margin-top: 1rem;
+    width: 100%;
+  }
 
-    @media screen and (max-width: 1200px) {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
+  &__author-wrapper {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__author {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
     }
 
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__time {
+    color: #575757;
+    font-weight: 300;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      .jshub-article-info__action-icon {
+        transform: scale(1.15);
+      }
     }
 
-    &__author-wrapper {
-        display: flex;
-        gap: 0.75rem;
+    &:active {
+      .jshub-article-info__action-icon {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  &__action-value {
+    opacity: 0.7;
+    font-size: 0.75rem;
+  }
+
+  &__action-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: #f0db4f;
+    transition: transform 0.3s ease;
+
+    &:focus {
+      outline: 4px solid rgba(240, 219, 79, 0.4);
+    }
+  }
+
+  &__tag {
+    color: black;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    height: 1.75rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    opacity: 0.75;
+    gap: 0.125rem;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    border: 2px solid #f0db4f;
+    line-height: 2rem;
+
+    &:hover {
+      opacity: 1;
+      background-color: #f0db4f;
     }
 
-    &__author {
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
-
-        &:focus {
-            text-decoration: underline;
-        }
+    &:focus {
+      outline: 4px solid rgba(240, 219, 79, 0.4);
     }
+  }
 
-    &__time {
-        color: #575757;
-        font-weight: 300;
-    }
- 
-    &__actions {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    &__action {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-
-        &:hover {
-            .jshub-article-info__action-icon {
-                transform: scale(1.15)
-            }
-        }
-
-        &:active {
-            .jshub-article-info__action-icon {
-                transform: scale(0.95)
-            }
-        }
-    }
-
-    &__action-value {
-        opacity: 0.7;
-        font-size: 0.75rem;
-    }
-
-    &__action-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        width: 2.25rem;
-        height: 2.25rem;
-        background-color: #F0DB4F;
-        transition: transform .3s ease;
-
-        &:focus {
-            outline: 4px solid rgba(240, 219, 79, 0.4);
-        }
-    }
-
-    &__tag {
-        color: black;
-        font-size: 0.75rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.25rem 1rem;
-        height: 1.75rem;
-        border-radius: 2rem;
-        cursor: pointer;
-        opacity: 0.75;
-        gap: 0.125rem;
-        transition: opacity .3s ease, background-color .3s ease;
-        border: 2px solid #F0DB4F;
-        line-height: 2rem;
-
-        &:hover {
-            opacity: 1;
-            background-color: #F0DB4F;
-        }
-
-        &:focus {
-            outline: 4px solid rgba(240, 219, 79, 0.4);
-        }
-    }
-
-    &__tag-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-    }
+  &__tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
 }

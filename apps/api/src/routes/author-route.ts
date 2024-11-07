@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.send(err);
   }
-})
+});
 
 router.get('/all', async (req, res) => {
   try {
@@ -26,6 +26,6 @@ router.get('/all', async (req, res) => {
   } catch (err) {
     res.send(err);
   }
-})
+});
 
 export { router as authorRouter };

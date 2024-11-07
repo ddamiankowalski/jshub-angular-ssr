@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component } from "@angular/core";
-import { ClassBinder } from "./class-binder.service"
+import { Component } from '@angular/core';
+import { ClassBinder } from './class-binder.service';
 import { hasClass } from '@javascripthub/testing';
 
 @Component({
   standalone: true,
   selector: 'jshub-test',
   template: '',
-  providers: [ClassBinder]
+  providers: [ClassBinder],
 })
 export class TestComponent {
   constructor(private _classBinder: ClassBinder) {
@@ -32,28 +32,28 @@ describe('ClassBinder', () => {
     fixture = TestBed.createComponent(TestComponent);
     binder = fixture.componentRef.injector.get(ClassBinder);
     component = fixture.componentInstance;
-  })
+  });
 
   it('successfully initializes', () => {
     expect(binder).toBeTruthy();
-  })
+  });
 
   it('correctly binds the class', () => {
     expect(hasClass(fixture, 'jshub-test')).toBeTruthy();
-  })
+  });
 
   it('unbinds the class', () => {
     component.unbind('jshub-test');
     expect(hasClass(fixture, 'jshub-test')).toBeFalsy();
-  })
+  });
 
   it('adds the class when condition is true', () => {
     component.conditionalBind('conditional-class', true);
     expect(hasClass(fixture, 'conditional-class')).toBeTruthy();
-  })
+  });
 
   it('adds the class when condition is false', () => {
     component.conditionalBind('conditional-class', false);
     expect(hasClass(fixture, 'conditional-class')).toBeFalsy();
-  })
-})
+  });
+});

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { SectionNavigationService } from '../../services/section-navigation.service';
 import { ClassBinder } from '@javascripthub/utils';
 import { Article, ArticleSection } from '../../interfaces/article';
@@ -10,16 +17,14 @@ import { Article, ArticleSection } from '../../interfaces/article';
   styleUrl: './article-navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  providers: [ClassBinder]
+  providers: [ClassBinder],
 })
 export class ArticleNavigationComponent {
   public article = input.required<Article>();
 
-  public sections = computed(() => 
-    this.article()
-      .sections
-      .filter(section => section.navigatable)
-  )
+  public sections = computed(() =>
+    this.article().sections.filter((section) => section.navigatable)
+  );
 
   public navigation = inject(SectionNavigationService);
 
@@ -30,6 +35,6 @@ export class ArticleNavigationComponent {
   }
 
   public onSectionClick(section: ArticleSection): void {
-    this.navigation.scrollInto(section)
+    this.navigation.scrollInto(section);
   }
 }

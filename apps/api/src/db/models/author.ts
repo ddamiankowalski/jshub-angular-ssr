@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-const authorSchema = new mongoose.Schema({
+const authorSchema = new mongoose.Schema(
+  {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     imageUrl: { type: String, required: true },
@@ -8,6 +9,8 @@ const authorSchema = new mongoose.Schema({
     twitterUrl: { type: String },
     linkedInUrl: { type: String },
     githubUrl: { type: String },
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
 export const Author = mongoose.model('Author', authorSchema);

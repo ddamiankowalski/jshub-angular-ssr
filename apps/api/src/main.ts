@@ -11,7 +11,7 @@ dotenv.config();
 const port = process.env['PORT'] || 3000;
 
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/article', articleRouter);
@@ -23,7 +23,6 @@ const run = async (): Promise<void> => {
   app.listen(port, () => {
     console.log(`API Listening at http://localhost:${port}`);
   });
-}
+};
 
 run();
-

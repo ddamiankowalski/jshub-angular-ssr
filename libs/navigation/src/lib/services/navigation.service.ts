@@ -1,5 +1,5 @@
-import { Injectable, Signal, signal } from "@angular/core";
-import { NavigationPage } from "../directives";
+import { Injectable, Signal, signal } from '@angular/core';
+import { NavigationPage } from '../directives';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationService {
@@ -12,7 +12,7 @@ export class NavigationService {
   public navigate(commands: string[], ...args: unknown[]): void {
     const page = this._activePage();
 
-    if(!page) {
+    if (!page) {
       throw new Error('Could not navigate to page. The active page is null');
     }
 

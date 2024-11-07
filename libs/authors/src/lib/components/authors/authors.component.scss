@@ -1,6 +1,6 @@
 .jshub-authors {
   animation-name: fade-in-static;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   margin-top: 5rem;
   display: flex;
   gap: 3rem;
@@ -65,22 +65,22 @@
     cursor: pointer;
     opacity: 0.75;
     gap: 0.5rem;
-    transition: opacity .3s ease, background-color .3s ease;
-    border: 2px solid #F0DB4F;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    border: 2px solid #f0db4f;
     line-height: 2rem;
 
     &:hover {
-        opacity: 1;
-        background-color: #F0DB4F;
+      opacity: 1;
+      background-color: #f0db4f;
     }
 
     &:focus {
-        outline: 4px solid rgba(240, 219, 79, 0.4);
+      outline: 4px solid rgba(240, 219, 79, 0.4);
     }
   }
 
   &__social {
-      display: flex;
-      gap: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
   }
 }

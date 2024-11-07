@@ -1,118 +1,119 @@
 .jshub-article-tile {
-    position: relative;
-    height: 9rem;
-    flex-grow: 1;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    transition: box-shadow .3s ease, opacity .3s ease;
-    cursor: pointer;
-    transition: transform .3s ease, --light .3s, --dark .3s;
-    animation-name: fade-in;
-    animation-duration: .3s;
-    border-radius: 0.75rem;
-    overflow: hidden;
+  position: relative;
+  height: 9rem;
+  flex-grow: 1;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, --light 0.3s, --dark 0.3s;
+  animation-name: fade-in;
+  animation-duration: 0.3s;
+  border-radius: 0.75rem;
+  overflow: hidden;
 
-    &__wrapper {
-        width: 100%;
-        height: 100%;
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    --dark: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transform: scale(1.025);
+
+    .jshub-article-tile__title {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: scale(0.985);
+  }
+
+  &__info {
+    position: absolute;
+    display: flex;
+    gap: 4rem;
+    bottom: 0;
+    width: 100%;
+    padding: 0.75rem 1.3125rem;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: end;
+    gap: 1.375rem;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+  }
+
+  &__action {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.625rem;
+    color: #ffffff;
+
+    ng-icon {
+      position: absolute;
+      opacity: 0.75;
+      color: #f0db4f;
+      top: 0.5rem;
+      left: 0.5rem;
+      transition: opacity 0.3s ease;
     }
 
     &:hover {
-        --dark: rgba(0, 0, 0, 0.5);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-        transform: scale(1.025);
+      ng-icon {
+        opacity: 1;
+      }
 
-        .jshub-article-tile__title {
-            opacity: 1;
-        }
+      .jshub-article-tile__action-icon {
+        opacity: 0.35;
+      }
+
+      .jshub-article-tile__action-value {
+        opacity: 1;
+      }
     }
+  }
 
-    &:active {
-        transform: scale(0.985);
-    }
+  &__action-value {
+    opacity: 0.8;
+  }
 
-    &__info {
-        position: absolute;
-        display: flex;
-        gap: 4rem;
-        bottom: 0;
-        width: 100%;
-        padding: 0.75rem 1.3125rem;
-        box-sizing: border-box;
-    }
-
-    &__title {
-        line-height: 1.5rem;
-        font-weight: 600;
-        color: #FFFFFF;
-        opacity: 0.5;
-        transition: opacity .3s ease;
-    }
-
-    &__actions {
-        display: flex;
-        align-items: end;
-        gap: 1.375rem;
-    }
-
-    &__icon-wrapper {
-        position: relative;
-    }
-
-    &__action {
-        position: relative;
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        flex-direction: column;
-        font-size: 0.625rem;
-        color: #FFFFFF;
-
-        ng-icon {
-            position: absolute;
-            opacity: 0.75;
-            color: #F0DB4F;
-            top: 0.5rem;
-            left: 0.5rem;
-            transition: opacity .3s ease;
-        }
-
-        &:hover {
-            ng-icon {
-                opacity: 1;
-            }
-
-            .jshub-article-tile__action-icon {
-                opacity: 0.35;
-            }
-
-            .jshub-article-tile__action-value {
-                opacity: 1;
-            }
-        }
-    }
-
-    &__action-value {
-        opacity: 0.8;
-    }
-
-    &__action-icon {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background-color: #F0DB4F;
-        opacity: 0.2;
-        transition: opacity .3s ease;
-    }
+  &__action-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #f0db4f;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+  }
 }
 
 @property --dark {
-    syntax: '<color>';
-    initial-value: rgba(0, 0, 0, 0.75);
-    inherits: false;
-  }
+  syntax: '<color>';
+  initial-value: rgba(0, 0, 0, 0.75);
+  inherits: false;
+}
 
-  @property --light {
-    syntax: '<color>';
-    initial-value: rgba(0, 0, 0, 0);
-    inherits: false;
-  }
+@property --light {
+  syntax: '<color>';
+  initial-value: rgba(0, 0, 0, 0);
+  inherits: false;
+}

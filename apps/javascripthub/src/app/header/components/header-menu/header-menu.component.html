@@ -2,13 +2,18 @@
   class="jshub-header-menu__menu"
   [class.jshub-header-menu__menu--expanded]="isExpanded()"
 >
-    <ul class="jshub-header-menu__items">
-        @for(item of items; track item) {
-            <li (click)="onItemClick(item)" (keydown)="onItemClick(item)" class="jshub-header-menu__item" tabindex="0">
-              {{ item.label }}
-            </li>
-        }
-    </ul>
+  <ul class="jshub-header-menu__items">
+    @for(item of items; track item) {
+    <li
+      (click)="onItemClick(item)"
+      (keydown)="onItemClick(item)"
+      class="jshub-header-menu__item"
+      tabindex="0"
+    >
+      {{ item.label }}
+    </li>
+    }
+  </ul>
 </menu>
 
 <div
@@ -19,6 +24,11 @@
   tabindex="0"
 ></div>
 
-<div (click)="onMobileClick()" (keydown)="onMobileClick()" tabindex="0" class="jshub-header-menu__mobile">
+<div
+  (click)="onMobileClick()"
+  (keydown)="onMobileClick()"
+  tabindex="0"
+  class="jshub-header-menu__mobile"
+>
   <ng-icon [name]="iconName()" size="20" />
 </div>

@@ -1,7 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
-import { NavigationPage } from "@javascripthub/navigation";
-import { ClassBinder } from "@javascripthub/utils";
-import { NgIcon } from "@ng-icons/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
+import { NavigationPage } from '@javascripthub/navigation';
+import { ClassBinder } from '@javascripthub/utils';
+import { NgIcon } from '@ng-icons/core';
 
 @Component({
   standalone: true,
@@ -22,6 +27,6 @@ export class AuthorsComponent extends NavigationPage {
   }
 
   protected override _fadeOut(): Promise<unknown> {
-      return this._defaultFadeOut();
+    return this._defaultFadeOut();
   }
 }
