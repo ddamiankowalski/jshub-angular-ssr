@@ -6,7 +6,7 @@ services:
     container_name: jshub_api
     restart: always
     ports:
-      - "4000:4000"
+      - '4000:4000'
     environment:
       - DB_URI=mongodb://mongo:27017
       - DB_USER=root
@@ -24,6 +24,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=t4jn3h4slo
     restart: always
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - ./db_data/:/data/db

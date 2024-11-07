@@ -29,13 +29,12 @@ module.exports = [
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     // Override or add rules here
     rules: {
-      "sort-imports":
-      [
-        "error",
+      'sort-imports': [
+        'error',
         {
-          "ignoreCase": true,
-          "ignoreDeclarationSort": true
-        }
+          ignoreCase: true,
+          ignoreDeclarationSort: true,
+        },
       ],
     },
   },
