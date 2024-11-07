@@ -1,10 +1,10 @@
 .jshub-header {
     position: relative;
 
-    &__menu {
-        @media screen and (max-width: 750px) {
-            display: none;
-        }
+    &__auth {
+      @media screen and (max-width: 750px) {
+        display: none;
+      }
     }
 
     header {
