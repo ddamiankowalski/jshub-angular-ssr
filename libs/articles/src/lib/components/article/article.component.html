@@ -1,27 +1,30 @@
-@if(article(); as article) {
-<div class="jshub-article__header">
-  <h1>{{ article.title }}</h1>
-</div>
+@if (article(); as article) {
+  <div class="jshub-article__header">
+    <h1>{{ article.title }}</h1>
+  </div>
 
-<jshub-article-info [article]="article" />
+  <jshub-article-info [article]="article" />
 
-<div
-  class="jshub-article__image"
-  [ngStyle]="{
-            'background': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('+ url() +')',
-            'background-size': 'cover',
-            'background-repeat': 'no-repeat',
-            'background-position': 'center',
-        }"
-></div>
+  <div
+    class="jshub-article__image"
+    [ngStyle]="{
+      background:
+        'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(' +
+        url() +
+        ')',
+      'background-size': 'cover',
+      'background-repeat': 'no-repeat',
+      'background-position': 'center',
+    }"
+  ></div>
 
-<div class="jshub-article__content">
-  @for(section of article.sections; track section) {
-  <jshub-article-section [section]="section" />
-  }
+  <div class="jshub-article__content">
+    @for (section of article.sections; track section) {
+      <jshub-article-section [section]="section" />
+    }
 
-  <jshub-article-author />
-</div>
+    <jshub-article-author />
+  </div>
 
-<jshub-article-navigation [article]="article" />
+  <jshub-article-navigation [article]="article" />
 }

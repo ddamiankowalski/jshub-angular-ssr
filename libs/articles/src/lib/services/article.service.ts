@@ -30,7 +30,7 @@ export class ArticleService {
         return [...articles, added];
       } else {
         return articles.map((article) =>
-          article._id === added._id ? added : { ...article }
+          article._id === added._id ? added : { ...article },
         );
       }
     });

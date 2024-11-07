@@ -3,15 +3,15 @@
   [class.jshub-header-menu__menu--expanded]="isExpanded()"
 >
   <ul class="jshub-header-menu__items">
-    @for(item of items; track item) {
-    <li
-      (click)="onItemClick(item)"
-      (keydown)="onItemClick(item)"
-      class="jshub-header-menu__item"
-      tabindex="0"
-    >
-      {{ item.label }}
-    </li>
+    @for (item of items; track item) {
+      <li
+        (click)="onItemClick(item)"
+        (keydown)="onItemClick(item)"
+        class="jshub-header-menu__item"
+        tabindex="0"
+      >
+        {{ item.label }}
+      </li>
     }
   </ul>
 </menu>

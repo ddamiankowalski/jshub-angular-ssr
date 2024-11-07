@@ -10,7 +10,7 @@ const authorSchema = new mongoose.Schema(
     linkedInUrl: { type: String },
     githubUrl: { type: String },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const Author = mongoose.model('Author', authorSchema);

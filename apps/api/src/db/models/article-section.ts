@@ -8,10 +8,10 @@ const articleSectionSchema = new mongoose.Schema(
     htmlId: { type: String, required: true },
     navigatable: { type: Boolean, required: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const ArticleSection = mongoose.model(
   'ArticleSection',
-  articleSectionSchema
+  articleSectionSchema,
 );

@@ -8,7 +8,7 @@ const articleSchema = new mongoose.Schema(
     tags: [{ type: String, default: [] }],
     sections: [{ type: mongoose.Types.ObjectId, ref: 'ArticleSection' }],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const Article = mongoose.model('Article', articleSchema);

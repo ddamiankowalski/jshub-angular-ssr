@@ -8,7 +8,7 @@ import { ComponentFixture } from '@angular/core/testing';
  */
 export const hasClass = <T>(
   fixture: ComponentFixture<T>,
-  className: string
+  className: string,
 ): boolean => {
   return fixture.debugElement.classes[className];
 };

@@ -30,7 +30,7 @@ export class ArticleAuthorComponent {
     this._router.navigate([]).then(() => {
       window.open(
         'https://www.linkedin.com/in/damian-kowalski-17a1261b8/',
-        '_blank'
+        '_blank',
       );
     });
   }

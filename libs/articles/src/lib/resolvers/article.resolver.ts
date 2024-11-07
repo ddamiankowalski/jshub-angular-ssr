@@ -6,7 +6,7 @@ import { ArticleService } from '../services/article.service';
 import { tap } from 'rxjs';
 
 export const articleResolver: ResolveFn<Article> = (
-  route: ActivatedRouteSnapshot
+  route: ActivatedRouteSnapshot,
 ) => {
   const article = inject(ArticleService);
 

@@ -23,7 +23,7 @@ export class ArticleNavigationComponent {
   public article = input.required<Article>();
 
   public sections = computed(() =>
-    this.article().sections.filter((section) => section.navigatable)
+    this.article().sections.filter((section) => section.navigatable),
   );
 
   public navigation = inject(SectionNavigationService);

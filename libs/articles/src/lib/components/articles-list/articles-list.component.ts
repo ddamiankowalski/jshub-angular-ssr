@@ -53,7 +53,7 @@ export class ArticlesListComponent extends NavigationPage {
         }
 
         return tile.fade(50);
-      })
+      }),
     );
   }
 

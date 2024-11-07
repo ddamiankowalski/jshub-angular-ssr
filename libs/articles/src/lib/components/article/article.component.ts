@@ -83,7 +83,7 @@ export class ArticleComponent extends NavigationPage implements AfterViewInit {
 
     const animation = this._elementRef.nativeElement.animate(
       keyframes,
-      options
+      options,
     );
     return animation.finished;
   }

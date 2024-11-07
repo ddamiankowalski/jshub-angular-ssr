@@ -60,7 +60,7 @@ export class ArticleSectionComponent {
             this._navigation.setActiveSection(null);
           }
         },
-        { threshold: 0.25 }
+        { threshold: 0.25 },
       );
 
       observer.observe(this._elementRef.nativeElement);

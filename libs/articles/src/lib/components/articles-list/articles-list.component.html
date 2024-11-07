@@ -1,3 +1,6 @@
-@for(item of article.all(); track item) {
-<jshub-article-tile (articleClick)="onArticleClick($event)" [article]="item" />
+@for (item of article.all(); track item) {
+  <jshub-article-tile
+    (articleClick)="onArticleClick($event)"
+    [article]="item"
+  />
 }

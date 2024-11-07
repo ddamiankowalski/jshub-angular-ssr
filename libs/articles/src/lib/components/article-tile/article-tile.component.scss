@@ -3,9 +3,14 @@
   height: 9rem;
   flex-grow: 1;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
   cursor: pointer;
-  transition: transform 0.3s ease, --light 0.3s, --dark 0.3s;
+  transition:
+    transform 0.3s ease,
+    --light 0.3s,
+    --dark 0.3s;
   animation-name: fade-in;
   animation-duration: 0.3s;
   border-radius: 0.75rem;
@@ -18,7 +23,8 @@
 
   &:hover {
     --dark: rgba(0, 0, 0, 0.5);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     transform: scale(1.025);
 

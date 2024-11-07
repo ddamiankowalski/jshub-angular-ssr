@@ -1,39 +1,41 @@
-@if(article(); as article) {
-<div class="jshub-article-info__wrapper">
-  @if(article.tags.length) {
-  <div class="jshub-article-info__tag-wrapper">
-    @for(tag of article.tags; track tag) {
-    <div class="jshub-article-info__tag" tabindex="0">
-      <ng-icon name="cssHashtag" />
-      <span>{{ tag }}</span>
-    </div>
+@if (article(); as article) {
+  <div class="jshub-article-info__wrapper">
+    @if (article.tags.length) {
+      <div class="jshub-article-info__tag-wrapper">
+        @for (tag of article.tags; track tag) {
+          <div class="jshub-article-info__tag" tabindex="0">
+            <ng-icon name="cssHashtag" />
+            <span>{{ tag }}</span>
+          </div>
+        }
+      </div>
     }
-  </div>
-  }
 
-  <div class="jshub-article-info__author-wrapper">
-    <span class="jshub-article-info__time">12 mins read</span>
-    <span class="jshub-article-info__author" tabindex="0">Damian Kowalski</span>
+    <div class="jshub-article-info__author-wrapper">
+      <span class="jshub-article-info__time">12 mins read</span>
+      <span class="jshub-article-info__author" tabindex="0"
+        >Damian Kowalski</span
+      >
+    </div>
   </div>
-</div>
 
-<div class="jshub-article-info__actions">
-  <div
-    (click)="onLikeClick()"
-    (keydown)="onLikeClick()"
-    tabindex="0"
-    class="jshub-article-info__action"
-  >
-    <div class="jshub-article-info__action-icon" tabindex="0">
-      <ng-icon name="cssHeart" color="black" />
+  <div class="jshub-article-info__actions">
+    <div
+      (click)="onLikeClick()"
+      (keydown)="onLikeClick()"
+      tabindex="0"
+      class="jshub-article-info__action"
+    >
+      <div class="jshub-article-info__action-icon" tabindex="0">
+        <ng-icon name="cssHeart" color="black" />
+      </div>
+      <span class="jshub-article-info__action-value">{{ article.likes }}</span>
     </div>
-    <span class="jshub-article-info__action-value">{{ article.likes }}</span>
-  </div>
-  <div class="jshub-article-info__action">
-    <div class="jshub-article-info__action-icon" tabindex="0">
-      <ng-icon name="cssComment" color="black" />
+    <div class="jshub-article-info__action">
+      <div class="jshub-article-info__action-icon" tabindex="0">
+        <ng-icon name="cssComment" color="black" />
+      </div>
+      <span class="jshub-article-info__action-value">20</span>
     </div>
-    <span class="jshub-article-info__action-value">20</span>
   </div>
-</div>
 }
