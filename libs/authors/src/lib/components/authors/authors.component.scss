@@ -5,6 +5,13 @@
   display: flex;
   gap: 3rem;
 
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    gap: 1rem;
+    width: 85%;
+    margin: 3rem auto;
+  }
+
   img {
     border-radius: 50%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -24,6 +31,12 @@
     justify-content: start;
     width: fit-content;
     text-align: end;
+
+    @media screen and (max-width: 750px) {
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
   }
 
   &__header {
@@ -38,10 +51,6 @@
     font-size: 1rem;
     text-align: justify;
     line-height: 2.25em;
-
-    @media screen and (max-width: 750px) {
-
-    }
   }
 
   &__tag {
