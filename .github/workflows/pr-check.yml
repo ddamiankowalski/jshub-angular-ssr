@@ -3,23 +3,22 @@ name: pr-check
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
-    branches: [master]
+    branches: [main]
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  master:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: 'master'
 
       # This enables task distribution via Nx Cloud
       # Run this command as early as possible, before dependencies are installed
