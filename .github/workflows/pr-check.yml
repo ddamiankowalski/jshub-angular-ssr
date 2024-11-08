@@ -49,5 +49,11 @@ jobs:
       # - name: Check format
       #   run: npx nx-cloud record -- nx format:check --libs-and-apps
 
+      - name: Prettier
+        run: npx nx-cloud record -- nx format:check
+
+      - name: Eslint
+        run: npx nx affected -t lint
+
       - name: Check tests
         run: npx nx affected -t test
