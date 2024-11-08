@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { provideHttpClient } from '@angular/common/http';
-import { provideHttpClientTesting } from '@angular/common/http/testing'
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('ArticleComponent', () => {
   let fixture: ComponentFixture<ArticleComponent>;
@@ -12,13 +12,15 @@ describe('ArticleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [
-        { provide: ActivatedRoute, useValue: {
+        {
+          provide: ActivatedRoute,
+          useValue: {
             snapshot: { params: of('') },
-            params: of('')
-          }
+            params: of(''),
+          },
         },
         provideHttpClient(),
-        provideHttpClientTesting()
+        provideHttpClientTesting(),
       ],
     }).compileComponents();
 
