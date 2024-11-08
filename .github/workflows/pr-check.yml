@@ -1,9 +1,10 @@
 name: Pull Request Check
 
 on:
-  pull_request:
   push:
-    branches: master
+    branches:
+      - master
+  pull_request:
 
 permissions:
   actions: read
