@@ -11,11 +11,11 @@ env:
 jobs:
   build_docker_images:
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Build image
-      run: docker build --platform linux/amd64,linux/arm64 -t $DOCKER_IMAGE_NAME .
+      - name: Build image
+        run: docker build --platform linux/amd64,linux/arm64 -t $DOCKER_IMAGE_NAME .
 
-    - name: Push image
-      run: docker push $DOCKER_IMAGE_NAME
+      - name: Push image
+        run: docker push $DOCKER_IMAGE_NAME
