@@ -9,9 +9,7 @@ import { ClassBinder } from '@javascripthub/utils';
   selector: 'jshub-root',
   templateUrl: 'app.component.html',
   styleUrl: 'app.component.scss',
-  providers: [ClassBinder
-
-  ],
+  providers: [ClassBinder],
 })
 export class AppComponent {
   public title = 'jshub.dev';
