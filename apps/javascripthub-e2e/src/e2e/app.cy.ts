@@ -1,5 +1,3 @@
-import { getGreeting } from '../support/app.po';
-
 describe('javascripthub-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
@@ -8,6 +6,7 @@ describe('javascripthub-e2e', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(/Welcome/);
+    // getGreeting().contains(/Welcome/);
+    cy.title().should('eq', 'jshub | articles');
   });
 });
