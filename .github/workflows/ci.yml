@@ -2,8 +2,8 @@ name: Pull Request Check
 
 on:
   pull_request:
-    branches:
-      - master
+  push:
+    branches: master
 
 permissions:
   actions: read
