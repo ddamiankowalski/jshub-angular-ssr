@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -28,7 +28,7 @@ jobs:
 
       # Cache node_modules
       - name: Set up node.js
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
@@ -37,14 +37,14 @@ jobs:
       - run: npx cypress install
 
       - name: Set up SHA (nx caching)
-      - uses: nrwl/nx-set-shas@v4
+        uses: nrwl/nx-set-shas@v4
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
       # Nx Affected runs only tasks affected by the changes in this PR/commit. Learn more: https://nx.dev/ci/features/affected
       # When you enable task distribution, run the e2e-ci task instead of e2e ### lint build e2e
       - name: Check format
-      - run: npx nx-cloud record -- nx format:check
+        run: npx nx-cloud record -- nx format:check
 
       - name: Check tests
-      - run: npx nx affected -t test
+        run: npx nx affected -t test
