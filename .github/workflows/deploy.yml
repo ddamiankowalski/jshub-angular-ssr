@@ -21,4 +21,6 @@ jobs:
         run: docker build -t $DOCKER_IMAGE_NAME .
 
       - name: Push image
-        run: docker push $DOCKER_IMAGE_NAME
+        run: |
+          docker login -u dkowalski1997 -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push $DOCKER_IMAGE_NAME
