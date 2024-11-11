@@ -11,6 +11,7 @@ import {
 } from '@angular/platform-browser';
 import { provideIcons, provideNgIconsConfig } from '@ng-icons/core';
 import {
+  cssArrowRight,
   cssClose,
   cssComment,
   cssGitFork,
@@ -35,6 +36,7 @@ export const appConfig: ApplicationConfig = {
       cssComment,
       cssHashtag,
       cssGitFork,
+      cssArrowRight,
       bootstrapLinkedin,
       bootstrapGithub,
     }),
