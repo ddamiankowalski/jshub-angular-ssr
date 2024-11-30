@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   inject,
   signal,
   ViewEncapsulation,
@@ -45,10 +44,6 @@ export class HeaderMenuComponent {
 
   constructor() {
     this._classBinder.bind('jshub-header-menu');
-
-    effect(() => {
-      console.log(this.navigation.activeRoute());
-    });
   }
 
   public onItemClick(item: MenuItem): void {
