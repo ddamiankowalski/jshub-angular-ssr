@@ -23,11 +23,19 @@
     <div class="jshub-authors__social">
       <div class="jshub-authors__tag" tabindex="0">
         <ng-icon name="bootstrapLinkedin" />
-        <span>LinkedIn</span>
+        <span
+        (click)="onLinkedin()"
+        (keydown)="onLinkedin()"
+        tabindex="0"
+        >LinkedIn</span>
       </div>
       <div class="jshub-authors__tag" tabindex="0">
         <ng-icon name="bootstrapGithub" />
-        <span>GitHub</span>
+        <span
+          (click)="onGithub()"
+          (keydown)="onGithub()"
+          tabindex="0"
+        >GitHub</span>
       </div>
     </div>
   </section>

@@ -37,7 +37,7 @@
     font-size: 1rem;
     font-weight: 500;
     color: #1e1e1e;
-    line-height: 2em;
+    line-height: 1.5em;
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 0.3s ease;
@@ -48,6 +48,13 @@
 
     &--active {
       opacity: 1;
+
+      .jshub-article-navigation__section-title {
+        text-decoration: underline;
+        text-decoration-color: #f0db4f;
+        opacity: 1;
+        text-decoration-thickness: 2px;
+      }
     }
   }
 

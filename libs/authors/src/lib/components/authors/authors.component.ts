@@ -32,6 +32,21 @@ export class AuthorsComponent extends NavigationPage {
     this._setMeta();
   }
 
+  public onLinkedin(): void {
+    this._router.navigate([]).then(() => {
+      window.open(
+        'https://www.linkedin.com/in/damian-kowalski-17a1261b8/',
+        '_blank',
+      );
+    });
+  }
+
+  public onGithub(): void {
+    this._router.navigate([]).then(() => {
+      window.open('https://github.com/ddamiankowalski', '_blank');
+    });
+  }
+
   protected override _fadeOut(): Promise<unknown> {
     return this._defaultFadeOut();
   }
