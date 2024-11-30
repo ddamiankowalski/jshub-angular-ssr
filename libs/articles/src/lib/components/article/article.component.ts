@@ -36,6 +36,8 @@ import { NavigationPage } from '@javascripthub/navigation';
 export class ArticleComponent extends NavigationPage implements AfterViewInit {
   public routeParam = injectParams('id');
 
+  protected override _route = 'article';
+
   public article = computed(() => {
     const all = this._article.all();
     return all.find((article) => article._id === this.routeParam());

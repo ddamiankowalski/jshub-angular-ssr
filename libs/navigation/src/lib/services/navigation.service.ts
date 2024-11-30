@@ -1,12 +1,25 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { computed, Injectable, Signal, signal } from '@angular/core';
 import { NavigationPage } from '../directives';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationService {
   private _activePage = signal<NavigationPage | null>(null);
+  private _activeRoute = signal<string | null>(null);
 
   get activePage(): Signal<NavigationPage | null> {
     return this._activePage;
+  }
+
+  get activeRoute(): Signal<string | null> {
+    return computed(() => {
+      const page = this._activePage();
+
+      if (page) {
+        return page.route;
+      }
+
+      return null;
+    });
   }
 
   public navigate(commands: string[], ...args: unknown[]): void {

@@ -7,11 +7,17 @@ export abstract class NavigationPage {
   protected _navigation = inject(NavigationService);
   protected _elementRef = inject(ElementRef);
 
+  protected abstract _route: string;
+
   private _router = inject(Router);
   private _inProgress = false;
 
   constructor() {
     this._navigation.setActivePage(this);
+  }
+
+  get route(): string {
+    return this._route;
   }
 
   public navigate(commands: string[], ...args: unknown[]): void {

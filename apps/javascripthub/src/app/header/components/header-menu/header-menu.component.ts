@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   signal,
   ViewEncapsulation,
@@ -33,11 +34,10 @@ export class HeaderMenuComponent {
     return isExpanded ? 'cssClose' : 'cssMenu';
   });
 
-  private _navigation = inject(NavigationService);
+  public navigation = inject(NavigationService);
 
   public items: MenuItem[] = [
     { label: 'Articles', route: '' },
-    // { label: 'Courses', route: '' },
     { label: 'Who are we?', route: 'authors' },
   ];
 
@@ -45,10 +45,14 @@ export class HeaderMenuComponent {
 
   constructor() {
     this._classBinder.bind('jshub-header-menu');
+
+    effect(() => {
+      console.log(this.navigation.activeRoute());
+    });
   }
 
   public onItemClick(item: MenuItem): void {
-    this._navigation.navigate(['/', item.route]);
+    this.navigation.navigate(['/', item.route]);
     this.isExpanded.set(false);
   }
 

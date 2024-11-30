@@ -8,12 +8,20 @@
   -ms-user-select: text;
   user-select: text;
 
+  pre {
+    margin: 1.5rem 0;
+
+    @media only screen and (max-width: 750px) {
+      margin: 1.5rem 0;
+    }
+  }
+
   &__header {
     position: relative;
     font-weight: 600;
     font-size: 2rem;
     margin: 2rem 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 0;
     width: fit-content;
     font-weight: 600;

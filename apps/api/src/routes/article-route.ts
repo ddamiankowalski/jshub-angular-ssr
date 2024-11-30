@@ -1,8 +1,8 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { Article } from '../db/models/article';
 import { ArticleSection } from '../db/models/article-section';
 
-const router = express.Router();
+const router: Router = express.Router();
 
 router.post('/', async (req, res) => {
   const { sections, ...articlePayload } = req.body;

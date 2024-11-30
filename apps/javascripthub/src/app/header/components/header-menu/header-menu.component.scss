@@ -91,5 +91,12 @@
     &:hover {
       opacity: 1;
     }
+
+    &--active {
+      text-decoration: underline;
+      text-decoration-color: #f0db4f;
+      opacity: 1;
+      text-decoration-thickness: 2px;
+    }
   }
 }
