@@ -8,6 +8,9 @@
         (click)="onItemClick(item)"
         (keydown)="onItemClick(item)"
         class="jshub-header-menu__item"
+        [class.jshub-header-menu__item--active]="
+          navigation.activeRoute() === item.route
+        "
         tabindex="0"
       >
         {{ item.label }}

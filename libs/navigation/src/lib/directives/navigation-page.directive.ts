@@ -6,12 +6,18 @@ import { Router } from '@angular/router';
 export abstract class NavigationPage {
   protected _navigation = inject(NavigationService);
   protected _elementRef = inject(ElementRef);
+  protected _router = inject(Router);
 
-  private _router = inject(Router);
+  protected abstract _route: string;
+
   private _inProgress = false;
 
   constructor() {
     this._navigation.setActivePage(this);
+  }
+
+  get route(): string {
+    return this._route;
   }
 
   public navigate(commands: string[], ...args: unknown[]): void {

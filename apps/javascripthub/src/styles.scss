@@ -10,14 +10,6 @@ code {
   overflow: scroll;
 }
 
-pre {
-  margin: 4rem 0;
-
-  @media only screen and (max-width: 750px) {
-    margin: 1.5rem 0;
-  }
-}
-
 html,
 body {
   margin: 0;
