@@ -6,12 +6,14 @@ import bootstrap from './src/main.server';
 import compression from 'compression';
 import { fileURLToPath } from 'url';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { robotsRouter } from './robots';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
 
   server.use(compression());
+  server.use(robotsRouter);
 
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
